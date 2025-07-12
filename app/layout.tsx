@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
+import Header from "./_components/Header";
 
 const leagueSpartan = League_Spartan({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
-  variable: '--font-spartan'
-})
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-spartan",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -28,13 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${leagueSpartan.variable} antialiased`}
-      >
-        <main className="mx-auto overflow-hidden font-spartan">
-          {children}
-        </main>
-        
+      <body className={`${leagueSpartan.variable} antialiased`}>
+        <Header />
+        <main className="mx-auto overflow-hidden font-spartan">{children}</main>
       </body>
     </html>
   );

@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 @layer base {
-    :root {
-    --very-dark-blue: #1B1D23;
-    --dark-grey: #60636D;
-    --medium-grey: #7D828F;
-    --light-grey: #C8CCD8;
-    --very-light-grey: #EEEFF4;
-    --error: #DF5656;
-    }
+  :root {
+    --very-dark-blue: #1b1d23;
+    --dark-grey: #60636d;
+    --medium-grey: #7d828f;
+    --light-grey: #c8ccd8;
+    --very-light-grey: #eeeff4;
+    --error: #df5656;
+  }
 
-    html {
-        font-family: 'League Spartan', sans-serif;
-    }
+  html {
+    font-family: "League Spartan", sans-serif;
+    font-size: 80%;
+  }
 }
 
 @layer components {
@@ -20,58 +21,79 @@
   .text-very-dark-blue {
     color: var(--very-dark-blue);
   }
-  
+
   .bg-very-dark-blue {
     background-color: var(--very-dark-blue);
   }
-  
+
   .text-dark-grey {
     color: var(--dark-grey);
   }
-  
+
   .bg-dark-grey {
     background-color: var(--dark-grey);
   }
-  
+
   .text-medium-grey {
     color: var(--medium-grey);
   }
-  
+
   .bg-medium-grey {
     background-color: var(--medium-grey);
   }
-  
+
   .text-light-grey {
     color: var(--light-grey);
   }
-  
+
   .bg-light-grey {
     background-color: var(--light-grey);
   }
-  
+
   .text-very-light-grey {
     color: var(--very-light-grey);
   }
-  
+
   .bg-very-light-grey {
     background-color: var(--very-light-grey);
   }
-  
+
   .text-error {
     color: var(--error);
   }
-  
+
   .bg-error {
     background-color: var(--error);
   }
-  
+
   /* Font family utility */
   .font-spartan {
-    font-family: 'League Spartan', sans-serif;
+    font-family: "League Spartan", sans-serif;
   }
-  
+
   /* Grid template utility */
   .grid-cols-sm {
     grid-template-columns: 3rem 1fr;
   }
+}
+
+.rotate {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.not-rotate {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(10rem);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
