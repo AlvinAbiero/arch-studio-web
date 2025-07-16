@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/Header";
+import SideNavIndicator from "./_components/SideNavIndicator";
 // import Footer from "./_components/Footer";
 
 const leagueSpartan = League_Spartan({
@@ -37,6 +38,7 @@ export default function RootLayout({
             {children}
           </main>
           {/* <Footer /> */}
+          <SideNavIndicator />
         </div>
       </body>
     </html>

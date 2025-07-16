@@ -9,7 +9,13 @@ import close from "@/public/icons/icon-close.svg";
 import hamburger from "@/public/icons/icon-hamburger.svg";
 
 const Navigation = () => {
-  const { isMenuOpen, toggleMenu, closeMenu } = useAppStore();
+  const { isMenuOpen, toggleMenu, closeMenu, setCurrentPage, currentPage } =
+    useAppStore();
+
+  const handleNavClick = (page: string) => {
+    setCurrentPage(page);
+    closeMenu();
+  };
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -39,7 +45,7 @@ const Navigation = () => {
       <div className="lg:max-w-7xl max-w-4xl mx-auto py-2 px-4 sm:px-8 lg:px-8 shadow-md md:shadow-none">
         <div className="flex justify-between md:justify-start items-center h-16 lg:h-20 md:gap-16 min-w-full">
           {/* Logo */}
-          <Link href="/">
+          <Link href="/" onClick={() => handleNavClick("HOME")}>
             <Image src={Logo} alt="Logo" />
           </Link>
 
@@ -49,8 +55,12 @@ const Navigation = () => {
               <li>
                 <Link
                   href="/portfolio"
-                  onClick={closeMenu}
-                  className="block   text-[1.8rem] text-medium-grey hover:text-[#1b1d23] transition-colors cursor-pointer font-bold"
+                  onClick={() => handleNavClick("PORTFOLIO")}
+                  className={`block   text-[1.4rem] ${
+                    currentPage === "PORTFOLIO"
+                      ? "hover:text-medium-grey text-[#1b1d23] font-bold"
+                      : " text-medium-grey hover:text-[#1b1d23]"
+                  }  transition-colors cursor-pointer font-medium`}
                 >
                   Portfolio
                 </Link>
@@ -58,8 +68,12 @@ const Navigation = () => {
               <li>
                 <Link
                   href="/about"
-                  onClick={closeMenu}
-                  className="block px-3 py-2   text-[1.8rem]  text-medium-grey hover:text-[#1b1d23]  transition-colors cursor-pointer font-bold"
+                  onClick={() => handleNavClick("ABOUT US")}
+                  className={`block   text-[1.4rem] ${
+                    currentPage === "ABOUT US"
+                      ? "hover:text-medium-grey text-[#1b1d23] font-bold"
+                      : " text-medium-grey hover:text-[#1b1d23]"
+                  } ] transition-colors cursor-pointer font-medium`}
                 >
                   About Us
                 </Link>
@@ -67,8 +81,12 @@ const Navigation = () => {
               <li>
                 <Link
                   href="/contact"
-                  onClick={closeMenu}
-                  className="block px-3 py-2    text-[1.8rem] text-medium-grey hover:text-[#1b1d23]  transition-colors cursor-pointer font-bold"
+                  onClick={() => handleNavClick("CONTACT")}
+                  className={`block   text-[1.4rem] ${
+                    currentPage === "CONTACT"
+                      ? "hover:text-medium-grey text-[#1b1d23] font-bold"
+                      : " text-medium-grey hover:text-[#1b1d23]"
+                  }  transition-colors cursor-pointer font-medium`}
                 >
                   Contact
                 </Link>
@@ -122,7 +140,7 @@ const Navigation = () => {
                 <li>
                   <Link
                     href="/portfolio"
-                    onClick={closeMenu}
+                    onClick={() => handleNavClick("PORTFOLIO")}
                     className="block py-2 text-[1.8rem] text-medium-grey hover:text-[#1b1d23] transition-colors cursor-pointer font-bold"
                   >
                     Portfolio
@@ -131,7 +149,7 @@ const Navigation = () => {
                 <li>
                   <Link
                     href="/about"
-                    onClick={closeMenu}
+                    onClick={() => handleNavClick("ABOUT US")}
                     className="block  py-2 text-[1.8rem]  text-medium-grey hover:text-[#1b1d23]  transition-colors cursor-pointer font-bold"
                   >
                     About Us
@@ -140,7 +158,7 @@ const Navigation = () => {
                 <li>
                   <Link
                     href="/contact"
-                    onClick={closeMenu}
+                    onClick={() => handleNavClick("CONTACT")}
                     className="block py-2  text-[1.8rem] text-medium-grey hover:text-[#1b1d23]  transition-colors cursor-pointer font-bold"
                   >
                     Contact

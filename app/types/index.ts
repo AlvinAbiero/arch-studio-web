@@ -35,6 +35,10 @@ export interface AppStore {
   isAutoPlay: boolean;
   setAutoPlay: (enabled: boolean) => void;
 
+  // Current page tracking
+  currentPage: string;
+  setCurrentPage: (page: string) => void;
+
   // Helper getters
   getCurrentSlide: () => HomeSlide | undefined;
   isFirstSlide: () => boolean;
