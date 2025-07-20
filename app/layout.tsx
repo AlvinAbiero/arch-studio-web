@@ -3,7 +3,7 @@ import { League_Spartan } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/Header";
 import SideNavIndicator from "./_components/SideNavIndicator";
-// import Footer from "./_components/Footer";
+import Footer from "./_components/Footer";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -37,7 +37,7 @@ export default function RootLayout({
           <main className="mx-auto overflow-hidden font-spartan">
             {children}
           </main>
-          {/* <Footer /> */}
+          <Footer />
           <SideNavIndicator />
         </div>
       </body>

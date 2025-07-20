@@ -41,7 +41,7 @@ const Navigation = () => {
     return () => document.removeEventListener("keydown", handleEscape);
   }, [isMenuOpen, closeMenu]);
   return (
-    <header className="relative top-0 left-0 right-0 z-50 bg-transparent">
+    <header className="relative top-0 left-0 right-0 z-50 bg-transparent md:container mx-auto">
       <div className="lg:max-w-7xl max-w-4xl mx-auto py-2 px-4 sm:px-8 lg:px-8 shadow-md md:shadow-none">
         <div className="flex justify-between md:justify-start items-center h-16 lg:h-20 md:gap-16 min-w-full">
           {/* Logo */}
@@ -51,12 +51,12 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <ul className="ml-10 flex items-baseline space-x-8 pt-6">
+            <ul className="ml-10 flex items-baseline space-x-8 lg:space-x-12 pt-6">
               <li>
                 <Link
                   href="/portfolio"
                   onClick={() => handleNavClick("PORTFOLIO")}
-                  className={`block   text-[1.4rem] ${
+                  className={`block   text-[1.5rem] lg:text-[1.8rem] ${
                     currentPage === "PORTFOLIO"
                       ? "hover:text-medium-grey text-[#1b1d23] font-bold"
                       : " text-medium-grey hover:text-[#1b1d23]"
@@ -69,7 +69,7 @@ const Navigation = () => {
                 <Link
                   href="/about"
                   onClick={() => handleNavClick("ABOUT US")}
-                  className={`block   text-[1.4rem] ${
+                  className={`block   text-[1.5rem] lg:text-[1.8rem] ${
                     currentPage === "ABOUT US"
                       ? "hover:text-medium-grey text-[#1b1d23] font-bold"
                       : " text-medium-grey hover:text-[#1b1d23]"
@@ -82,7 +82,7 @@ const Navigation = () => {
                 <Link
                   href="/contact"
                   onClick={() => handleNavClick("CONTACT")}
-                  className={`block   text-[1.4rem] ${
+                  className={`block   text-[1.5rem] lg:text-[1.8rem] ${
                     currentPage === "CONTACT"
                       ? "hover:text-medium-grey text-[#1b1d23] font-bold"
                       : " text-medium-grey hover:text-[#1b1d23]"
@@ -129,7 +129,7 @@ const Navigation = () => {
           {/* Mobile Menu */}
           <div className="md:hidden block">
             <div
-              className={`fixed left-0 right-0 bg-gray-300  transform transition-transform duration-300 ease-in-out z-50  ${
+              className={`fixed left-0 right-0 bg-gray-200  transform transition-transform duration-300 ease-in-out z-50  ${
                 isMenuOpen
                   ? "translate-y-0 visible"
                   : "translate-y-50 invisible"
