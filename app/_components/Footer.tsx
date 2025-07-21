@@ -29,7 +29,7 @@ const Footer = () => {
       initial="hiddenBottom"
       animate={inView ? "visible" : "hiddenBottom"}
       transition={{ duration: 0.8, delay: 0.4 }}
-      className="md:container mx-auto lg:max-w-6xl max-w-4xl py-8 md:px-4  lg:px-8 md:my-24 mt-24 bg-gray-200 flex flex-col md:flex-row items-center justify-center relative"
+      className="md:container mx-auto xl:max-w-6xl lg:max-w-5xl md:max-w-4xl py-8 md:px-4  lg:px-8 md:my-24 mt-24 bg-gray-200 flex flex-col md:flex-row items-center justify-center relative"
     >
       <div className="bg-black lg:w-50 md:w-40 md:h-[100%] w-40 h-40 p-4 md:p-8 flex items-center justify-center md:absolute md:-left-12 lg:-left-16 xl:-left-20  md:mt-0 -mt-24">
         <Link href="/">
@@ -68,7 +68,7 @@ const Footer = () => {
             </Link>
           </li>
         </ul>
-        <div className="md:absolute md:-right-18 lg:-right-22">
+        <div className="md:absolute md:-right-12 lg:-right-18 xl:-right-22">
           <Cta href="/portfolio">
             <button className="text-[1.5rem] lg:text-[1.6rem] xl:text-[1.8rem] font-bold leading-[2.5rem]">
               See Our Portfolio
