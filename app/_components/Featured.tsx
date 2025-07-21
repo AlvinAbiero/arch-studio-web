@@ -21,7 +21,7 @@ const Featured = () => {
     setFeaturedProjects(projects);
   }, []);
   return (
-    <section className="my-24 md:my-36 lg:my-42 mx-auto md:container px-8 ">
+    <section className="my-24 md:my-36 lg:my-42 mx-auto md:container px-8">
       <div className="flex justify-between items-end">
         <h1 className="lg:font-bold font-semibold text-4xl md:text-5xl lg:text-6xl">
           Featured
